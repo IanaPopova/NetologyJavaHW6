@@ -46,9 +46,9 @@ public class StatsService {
     public int getAmountOfMonthsBelowAverage(long[] sales) {
         int belowAverage = 0;
 
-        for (int i = 0; i < 12; i++) {
-            if (i <= getTotalAmountOfSales(sales) / sales.length) {
-                 return belowAverage++;
+        for (int i = 0; i < sales.length; i++) {
+            if (i < (getTotalAmountOfSales(sales) / sales.length)) {
+                 belowAverage++;
             }
         }
         return belowAverage;
@@ -57,8 +57,8 @@ public class StatsService {
     public int getAmountOfMonthsAboveAverage(long[] sales) {
         int aboveAverage = 0;
 
-        for (int i = 0; i < 12; i++) {
-            if (i >= getTotalAmountOfSales(sales) / sales.length) {
+        for (long sale : sales) {
+            if (sale > getTotalAmountOfSales(sales) / sales.length) {
                 aboveAverage++;
             }
         }
