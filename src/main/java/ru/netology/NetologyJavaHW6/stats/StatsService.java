@@ -1,7 +1,5 @@
 package ru.netology.NetologyJavaHW6.stats;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class StatsService {
 
