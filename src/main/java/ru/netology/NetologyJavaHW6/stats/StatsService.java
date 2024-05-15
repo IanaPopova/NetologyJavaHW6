@@ -43,9 +43,10 @@ public class StatsService {
 
     public int getAmountOfMonthsBelowAverage(long[] sales) {
         int belowAverage = 0;
+        long avrg = getAverageSales(sales);
 
         for (long sale : sales) {
-            if (sale < getTotalAmountOfSales(sales) / sales.length) {
+            if (sale < avrg) {
                 belowAverage++;
             }
         }
@@ -54,9 +55,10 @@ public class StatsService {
 
     public int getAmountOfMonthsAboveAverage(long[] sales) {
         int aboveAverage = 0;
+        long avrg = getAverageSales(sales);
 
         for (long sale : sales) {
-            if (sale > getTotalAmountOfSales(sales) / sales.length) {
+            if (sale > avrg) {
                 aboveAverage++;
             }
         }
